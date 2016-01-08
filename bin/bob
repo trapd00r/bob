@@ -1,0 +1,4 @@
+#!/bin/sh
+# vim: ft=sh:
+
+sort -R ../lyrics | head -1

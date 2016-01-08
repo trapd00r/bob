@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+# vim: ft=perl:
+
+use strict;
+use List::Util;
+use open qw(:std :utf8);
+
+my $lyrics = "../lyrics";
+
+open(my $fh, "<:utf8", $lyrics) or die "Sad Bob: $!";
+my @lines = List::Util::shuffle(map{ $_ } <$fh>);
+close($fh);
+
+for(@lines) {
+  if($_ !~ /^\s+$/ && $_ !~ /^\s+.{5..9}/) {
+    s/,$//;
+    print;
+    exit;
+  }
+}
+
+
+### in case perl < 5.10
+#srand;
+#rand($.) < 1 && ($line = $_) while <>;
+#print $line;

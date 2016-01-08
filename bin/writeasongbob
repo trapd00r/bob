@@ -1,0 +1,5 @@
+#!/bin/sh
+# vim:ft=sh:
+
+while true; do perl ./bobp; sleep 2; done
+#while true; do sh ./bob; sleep 2; done
